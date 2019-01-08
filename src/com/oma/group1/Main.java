@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        if(args.length != 3 || !args[1].equals("-t")){
+        if(args.length != 3 || !args[0].equals("-t")){
             String programName = new java.io.File(Main.class.getProtectionDomain()
                     .getCodeSource()
                     .getLocation()
@@ -15,9 +15,9 @@ public class Main {
             System.out.println("Usage: " + programName + " -t time instancefilename");
             System.exit(1);
         }
-        Setup.filename = args[0];
-        String outName = args[0].split("\\.")[0];
-        int timeLimit = Integer.parseInt(args[2]);
+        Setup.filename = args[2];
+        String outName = args[2].split("\\.")[0];
+        int timeLimit = Integer.parseInt(args[1]);
 
         Population population = new Population(true);
 //        System.out.println(population);
